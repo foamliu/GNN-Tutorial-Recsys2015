@@ -5,14 +5,14 @@ from torch_geometric.data import Data
 from torch_geometric.data import InMemoryDataset
 from tqdm import tqdm
 
-from config import c_file
+from config import c_file, c_index
 
 
 class YooChooseBinaryDataset(InMemoryDataset):
     def __init__(self, root, transform=None, pre_transform=None):
         super(YooChooseBinaryDataset, self).__init__(root, transform, pre_transform)
         self.data, self.slices = torch.load(self.processed_paths[0])
-        self.df = pd.read_csv(c_file, header=None)
+        self.df = pd.read_csv(c_file, header=None, names=c_index, low_memory=False)
 
     @property
     def raw_file_names(self):
