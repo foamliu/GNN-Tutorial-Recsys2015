@@ -6,7 +6,7 @@ from config import c_file, b_file, c_index, b_index
 
 if __name__ == '__main__':
     print('reading click data...')
-    clicks = pd.read_csv(c_file, header=None, names=c_index)
+    clicks = pd.read_csv(c_file, header=None, names=c_index, low_memory=False)
     clicks.columns = ['session_id', 'timestamp', 'item_id', 'price', 'quantity']
     print(clicks.head(20))
 
