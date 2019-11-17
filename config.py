@@ -4,6 +4,9 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')  # sets de
 
 embed_dim = 128
 batch_size = 1024
+num_embeds = 52739
+
+
 image_folder = 'data'
 
 c_file = 'data/yoochoose-data/yoochoose-clicks.dat'

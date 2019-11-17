@@ -3,7 +3,7 @@ import torch.nn.functional as F
 from torch_geometric.nn import TopKPooling
 from torch_geometric.nn import global_mean_pool as gap, global_max_pool as gmp
 
-from config import embed_dim
+from config import embed_dim, num_embeds
 from sage_conv import SAGEConv
 
 
@@ -17,7 +17,7 @@ class Net(torch.nn.Module):
         self.pool2 = TopKPooling(128, ratio=0.8)
         self.conv3 = SAGEConv(128, 128)
         self.pool3 = TopKPooling(128, ratio=0.8)
-        self.item_embedding = torch.nn.Embedding(num_embeddings=df.item_id.max() + 1, embedding_dim=embed_dim)
+        self.item_embedding = torch.nn.Embedding(num_embeddings=num_embeds, embedding_dim=embed_dim)
         self.lin1 = torch.nn.Linear(256, 128)
         self.lin2 = torch.nn.Linear(128, 64)
         self.lin3 = torch.nn.Linear(64, 1)
