@@ -1,18 +1,18 @@
+import pandas as pd
 import torch
+from sklearn.preprocessing import LabelEncoder
+from torch_geometric.data import Data
 from torch_geometric.data import InMemoryDataset
 from tqdm import tqdm
-import numpy as np
-import pandas as pd
-import pickle
-import csv
-import os
-import torch
-from torch_geometric.data import Data
+
+from config import click_data_file
+
 
 class YooChooseBinaryDataset(InMemoryDataset):
     def __init__(self, root, transform=None, pre_transform=None):
         super(YooChooseBinaryDataset, self).__init__(root, transform, pre_transform)
         self.data, self.slices = torch.load(self.processed_paths[0])
+        self.df = pd.read_csv(click_data_file, header=None)
 
     @property
     def raw_file_names(self):
@@ -29,7 +29,7 @@ class YooChooseBinaryDataset(InMemoryDataset):
         data_list = []
 
         # process by session_id
-        grouped = df.groupby('session_id')
+        grouped = self.df.groupby('session_id')
         for session_id, group in tqdm(grouped):
             sess_item_id = LabelEncoder().fit_transform(group.item_id)
             group = group.reset_index(drop=True)
