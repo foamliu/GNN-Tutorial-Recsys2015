@@ -1,13 +1,12 @@
-import pandas as pd
 import torch
 from sklearn.preprocessing import LabelEncoder
 from torch_geometric.data import Data
 from torch_geometric.data import InMemoryDataset
 from tqdm import tqdm
 
-from config import c_file, c_index
+# from config import c_file, c_index
 
-df = pd.read_csv(c_file, header=None, names=c_index, low_memory=False)
+df = torch.load('data/yoochoose_click_binary_1M_sess.dataset')
 
 
 class YooChooseBinaryDataset(InMemoryDataset):
