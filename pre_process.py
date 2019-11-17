@@ -15,7 +15,7 @@ if __name__ == '__main__':
     buy_df.columns = ['session_id', 'timestamp', 'item_id', 'price', 'quantity']
     print(buy_df.head(20))
 
-    # print('buy_df.nunique(): ' + str(buy_df.nunique()))
+    print('buy_df.nunique(): ' + str(buy_df.nunique()))
     # print('df.nunique(): ' + str(df.nunique()))
     #
     # df['valid_session'] = df.session_id.map(df.groupby('session_id')['item_id'].size() > 2)
