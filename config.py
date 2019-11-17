@@ -5,8 +5,13 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')  # sets de
 embed_dim = 128
 batch_size = 1024
 image_folder = 'data'
-buy_data_file = 'data/yoochoose-data/yoochoose-buys.dat'
-click_data_file = 'data/yoochoose-data/yoochoose-clicks.dat'
+
+c_file = 'data/yoochoose-data/yoochoose-clicks.dat'
+b_file = 'data/yoochoose-data/yoochoose-buys.dat'
+
+c_index = ["SessionID", "Timestamp", "ItemID", "Category"]
+b_index = ["SessionID", "Timestamp", "ItemID", "Price", "Quantity"]
+
 test_data_file = 'data/yoochoose-data/yoochoose-test.dat'
 
 # Training parameters
