@@ -32,4 +32,8 @@ if __name__ == '__main__':
     processed_path = 'data/yoochoose_click_binary_1M_sess.dataset'
     with open(processed_path, 'wb') as f:
         torch.save(clicks, f)
+
+    num_embeddings = clicks.item_id.max() + 1
+    print('num_embeddings: ' + str(num_embeddings))
+
     logger.info('Completed!')
