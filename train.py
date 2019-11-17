@@ -44,7 +44,7 @@ def train_net(args):
     criterion = nn.BCELoss()
 
     # Custom dataloaders
-    dataset = YooChooseBinaryDataset(root='../')
+    dataset = YooChooseBinaryDataset(root='data/')
     dataset = dataset.shuffle()
     train_dataset = dataset[:800000]
     val_dataset = dataset[800000:900000]
