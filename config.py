@@ -9,8 +9,8 @@ image_folder = 'data'
 c_file = 'data/yoochoose-data/yoochoose-clicks.dat'
 b_file = 'data/yoochoose-data/yoochoose-buys.dat'
 
-c_index = ["SessionID", "Timestamp", "ItemID", "Category"]
-b_index = ["SessionID", "Timestamp", "ItemID", "Price", "Quantity"]
+c_index = ["session_id", "timestamp", "item_id", "category"]
+b_index = ["session_id", "timestamp", "item_id", "price", "quantity"]
 
 test_data_file = 'data/yoochoose-data/yoochoose-test.dat'
 

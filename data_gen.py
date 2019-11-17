@@ -20,7 +20,7 @@ class YooChooseBinaryDataset(InMemoryDataset):
 
     @property
     def processed_file_names(self):
-        return ['../input/yoochoose_click_binary_1M_sess.dataset']
+        return ['data/yoochoose_click_binary_1M_sess.dataset']
 
     def download(self):
         pass
