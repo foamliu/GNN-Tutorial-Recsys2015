@@ -5,6 +5,9 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')  # sets de
 embed_dim = 128
 batch_size = 1024
 image_folder = 'data'
+buy_data_file = 'data/yoochoose-data/yoochoose-buys.dat'
+click_data_file = 'data/yoochoose-data/yoochoose-clicks.dat'
+test_data_file = 'data/yoochoose-data/yoochoose-test.dat'
 
 # Training parameters
 num_workers = 4  # for data-loading
