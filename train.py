@@ -43,6 +43,7 @@ def train_net(args):
     # Loss function
     criterion = nn.BCELoss()
 
+    logger.info('init dataset...')
     # Custom dataloaders
     dataset = YooChooseBinaryDataset(root='data/')
     dataset = dataset.shuffle()
@@ -54,14 +55,8 @@ def train_net(args):
     val_loader = DataLoader(val_dataset, batch_size=batch_size)
     test_loader = DataLoader(test_dataset, batch_size=batch_size)
 
-    # scheduler = StepLR(optimizer, step_size=args.lr_step, gamma=0.1)
-
     # Epochs
     for epoch in range(start_epoch, args.end_epoch):
-        # Decay learning rate if there is no improvement for 10 consecutive epochs
-        # if epochs_since_improvement > 0 and epochs_since_improvement % 8 == 0:
-        #     adjust_learning_rate(optimizer, 0.1)
-
         # One epoch's training
         train_loss = train(train_loader=train_loader,
                            model=model,
