@@ -33,7 +33,10 @@ class Net(torch.nn.Module):
 
         x = F.relu(self.conv1(x, edge_index))
 
-        x, edge_index, _, batch, _ = self.pool1(x, edge_index, None, batch)
+        out = self.pool1(x, edge_index, None, batch)
+        print(out.size())
+        print(out)
+        # x, edge_index, _, batch, _ = self.pool1(x, edge_index, None, batch)
         x1 = torch.cat([gmp(x, batch), gap(x, batch)], dim=1)
 
         x = F.relu(self.conv2(x, edge_index))
