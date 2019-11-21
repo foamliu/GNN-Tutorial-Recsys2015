@@ -1,9 +1,14 @@
 # RecSys Challenge 2015
 
-Given a sequence of click events performed by some user during a typical session in an e-commerce website, the goal is to predict whether the user is going to buy something or not, and if he is buying, what would be the items he is going to buy. 
+In this year’s edition of the RecSys Challenge, YOOCHOOSE is providing a collection of sequences of click events; click sessions. For some of the sessions, there are also buying events. The goal is hence to predict whether the user (a session) is going to buy something or not, and if he is buying, what would be the items he is going to buy. Such an information is of high value to an e-business as it can indicate not only what items to suggest to the user but also how it can encourage the user to become a buyer. For instance to provide the user some dedicated promotions, discounts, etc. The data represents six months of activities of a big e-commerce businesses in Europe selling all kinds of stuff such as garden tools, toys, clothes, electronics and much more.
+
+A detailed description of the challenge can be found on the website of the [RecSys Challenge 2015](http://2015.recsyschallenge.com/).
 
 ## Dataset 
 Please download the dataset [HERE](https://recsys.acm.org/recsys15/challenge/).
+
+![image](https://github.com/foamliu/GNN-Tutorial-Recsys2015/raw/master/images/yoochoose-large.png)
+
 
 ## Dependencies
 
